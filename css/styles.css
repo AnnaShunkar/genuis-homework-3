@@ -50,6 +50,22 @@ h2 {
     height: 1px;
     overflow: hidden;
 }
+@keyframes spin {
+    0% {
+            opacity: 0;
+            transform: scale(0.5) rotate(0deg);
+        }
+    
+        50% {
+            opacity: 1;
+            transform: scale(1) rotate(180deg);
+        }
+    
+        100% {
+            opacity: 1;
+            transform: scale(1) rotate(360deg);
+        }
+}
 /*MAIN*/
 span {
     color: var(--main-color);
@@ -216,6 +232,7 @@ address {
 .change-images {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .change-image-first,
@@ -236,16 +253,34 @@ address {
 }
 .change-icon-first {
     fill: var(--secondary-color-blue);
-    border: 1px solid black;
+    position: absolute;
+    left: 90px;
+    top: 350px;
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
 }
 .change-icon-second {
     fill: var(--main-color);
-    border: 1px solid black;
+    position: absolute;
+    left: 400px;
+    top: 30px;
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
 }
 .change-icon-third {
     fill: var(--secondary-color-light-brown);
-    border: 1px solid black;
+    position: absolute;
+    left: 400px;
+    top: 280px;
+    opacity: 1;
+    transform: scale(0.5) rotate(0deg);
 }
+
+.change-icon-first,
+.change-icon-second,
+.change-icon-third {
+    animation: spin 1.5s ease-out forwards, spin 4s linear 2s;
+ }
 /*benefits section*/
 
 .benefits-container {
@@ -373,6 +408,9 @@ address {
         max-width: 220px;
         margin: 0 auto;
         color: var(--secondary-color-light-brown);
+}
+.form-field.contact {
+    margin-bottom: 16px;
 }
 /*FOOTER*/
 footer {
@@ -520,6 +558,7 @@ font-size: 22px;
     border: 2px solid var(--secondary-color-light-brown);
     border-radius: 32px;
     background-color: transparent;
+    height: 52px;
 }
 
 .form-input:focus {

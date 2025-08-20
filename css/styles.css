@@ -194,9 +194,7 @@ address {
 
 .header-media {
     display: flex;
-    flex-grow: 1;
     gap: 32px;
-    justify-content: center;
 }
 
 .header-socials {
@@ -303,7 +301,7 @@ address {
     border-radius: 32px;
     text-align: center;
     border: 1px solid blue;
-    gap: 8px;
+    padding: 24px 32px;
     background-color: var(--primary-color-light);
 }
 
@@ -336,7 +334,17 @@ address {
     gap: 32px;
     padding-top: 60px;
 }
-
+.procedures-card {
+    width: 344px;
+    height: 456px;
+    background-image:linear-gradient(180.05deg, rgba(1, 28, 68, 0) 48.53%,
+     rgba(1, 28, 68, 0.725825) 84.61%,
+     #011C44 101.39%);
+    border-top-left-radius: 120px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 120px;
+    border-bottom-left-radius: 4px;
+}
 .carousel-button {
     border-radius: 50%;
     width: 44px;
@@ -456,13 +464,20 @@ footer {
 .footer-logo,
 .footer-menu {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
-
 .address-list,
 .address-info {
     flex-grow: 1;
 }
-
+.address-list {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 16px;
+}
 .address-link {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -480,7 +495,6 @@ footer {
     display: flex;
     fill: var(--primary-color-light);
     flex-direction: row;
-    margin-top: 30px;
     gap: 24px;
     transition: color 0.2s;
 }
